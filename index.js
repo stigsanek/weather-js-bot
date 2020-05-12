@@ -1,5 +1,3 @@
-const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
-const WEATHER_KEY = process.env.WEATHER_KEY;
 const URL_HEROKU = 'https://weather-js-bot.herokuapp.com:443';
 const TEMP_KELVIN = 273.15;
 const WIND_DIRECTIONS = ['северный', 'северо-восточный', 'восточный', 'юго-восточный', 'южный', 'юго-западный', 'западный', 'северо-западный'];
@@ -21,11 +19,11 @@ const options = {
   }
 };
 
-const bot = new TelegramBot(TELEGRAM_TOKEN, options);
-bot.setWebHook(`${URL_HEROKU}/bot${TELEGRAM_TOKEN}`);
+const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, options);
+bot.setWebHook(`${URL_HEROKU}/bot${process.env.TELEGRAM_TOKEN}`);
 
 let chatId = null;
-const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?appid=${WEATHER_KEY}&lang=ru&`;
+const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?appid=${process.env.WEATHER_KEY}&lang=ru&`;
 
 bot.on('message', (msg) => {
   chatId = msg.chat.id;
