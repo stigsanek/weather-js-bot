@@ -1,0 +1,25 @@
+{
+  "name": "weather-js-bot",
+  "version": "1.0.0",
+  "description": "Telegram weather bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stigsanek/weather-js-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stigsanek/weather-js-bot/issues"
+  },
+  "homepage": "https://github.com/stigsanek/weather-js-bot#readme",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "node-fetch": "^2.6.0",
+    "node-telegram-bot-api": "^0.40.0"
+  }
+}
