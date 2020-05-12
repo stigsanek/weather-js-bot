@@ -45,6 +45,7 @@ bot.on('message', (msg) => {
   }
 });
 
+// Отправка ответа
 const sendAnswer = (data) => {
   if (data.hasOwnProperty('name')) {
     bot.sendMessage(chatId, createAnswer(data));
@@ -53,6 +54,7 @@ const sendAnswer = (data) => {
   }
 }
 
+// Создание ответа
 const createAnswer = (data) => {
   return '\u{1F4CD} ' + data.name
     + '\n\nСейчас на улице ' + data.weather[0].description
@@ -63,6 +65,7 @@ const createAnswer = (data) => {
     + ', скорость ' + Math.round(data.wind.speed) + ' м/с'
 }
 
+// Определение направления ветра
 const defineWindDirection = (angle) => {
   const rumb = Math.floor(angle / Rumb.SIZE + Rumb.SHIFT);
   const indexWind = rumb % Rumb.QUANTITY;
@@ -70,10 +73,12 @@ const defineWindDirection = (angle) => {
   return WIND_DIRECTIONS[indexWind];
 }
 
+// Приветствие
 const greet = () => {
   return 'Привет! Пришли мне название города или свою геопозицию \u{1F609}';
 }
 
+// Сообщение об ошибке
 const reportError = () => {
   return 'К сожалению я ничего не нашел \u{1F614} Попробуй отправить мне свою геопозицию.';
 }
