@@ -19,7 +19,7 @@
   "homepage": "https://github.com/stigsanek/weather-js-bot#readme",
   "dependencies": {
     "bluebird": "^3.7.2",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-telegram-bot-api": "^0.40.0"
   }
 }
